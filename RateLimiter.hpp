@@ -50,7 +50,8 @@ class RateLimiter {
   RateLimiter(double rate, double burst_size) :
       rate_(rate),
       burst_size_(burst_size) {};
-  bool aquire(std::string &key) {
+
+  bool aquire(T &key) {
     boost::upgrade_lock<boost::shared_mutex> lock(key_to_bucket_mu_);
 
     auto bucket_it = key_to_bucket_.find(key);
