@@ -1,4 +1,6 @@
-#pragma once
+#ifndef RATELIMITER_H
+#define RATELIMITER_H
+
 #include <unordered_map>
 #include <string>
 #include <memory>
@@ -62,3 +64,5 @@ class RateLimiter {
     }
   };
 };
+
+#endif
